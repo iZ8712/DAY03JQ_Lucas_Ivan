@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery animation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<style>		
+
+
+	</style>
+
+</head>
+<body>
+
+	 <div>
+
+        <h1>My List</h1>
+    </div>
+
+    <div>
+    	<ul>
+            <li>My Task 1</li>
+            <li>My Task 2</li>
+            <li>My Task 3</li>
+            <li>My Task 4</li>
+            <li>My Task 5</li>
+    	</ul>
+    </div>
+
+    <div>
+    	
+    	<input type="text"/>
+    	<button>Add</button>
+
+    </div>
+
+    <script>
+    	$(document).ready(function() {
+        	
+    		$('button').click(function() {    
+    			$('ul').append('<li class="new">' + $('input').val() + '</li>');
+
+    		$('.new').hide().show(1000);
+
+    		$('li').on('click', function() {
+                $(this).animate({
+                        opacity: 0.0,
+                        paddingLeft: '+=80'
+                    }, 500, function() {
+                        $(this).remove();
+                    });
+                });
+           
+
+			});
+
+        	$('li, .new').on('click', function() {
+                $(this).animate({
+                        opacity: 0.0,
+                        paddingLeft: '+=80'
+                    }, 500, function() {
+                        $(this).remove();
+                    });
+                });
+
+        });
+
+
+		
+		
+
+	</script>
+
+</body>
+</html>
